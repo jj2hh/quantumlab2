@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Anterior Case #1",
+    "description": "Smile makeover wax-up focusing on central incisors length and proportion.",
+    "image": "../img/portfolio/1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Full Mouth Case #2",
+    "description": "Comprehensive full arch diagnostic wax-up for vertical dimension restoration.",
+    "image": "../img/portfolio/2.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Posterior Occlusion #3",
+    "description": "Functional waxing to re-establish stable canine guidance and molar intercuspation.",
+    "image": "../img/portfolio/3.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Functional Preview #4",
+    "description": "Pre-operative visual guidance for multi-unit bridge preparation.",
+    "image": "../img/portfolio/4.jpg"
+  }
+]

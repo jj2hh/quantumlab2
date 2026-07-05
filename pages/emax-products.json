@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "type": "image",
+    "title": "Anterior Veneers",
+    "description": "Ultra-thin minimal preparation ceramic veneers mimicking natural enamel layer.",
+    "image": "../img/portfolio/2.jpg"
+  },
+  {
+    "id": 2,
+    "type": "image",
+    "title": "Single Inlay / Onlay",
+    "description": "Biocompatible posterior micro-restoration with superior margin adaptation.",
+    "image": "../img/portfolio/3.jpg"
+  }
+]

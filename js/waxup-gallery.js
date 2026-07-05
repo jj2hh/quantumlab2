@@ -1,0 +1,30 @@
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("waxup-gallery-container");
+
+  // JSON 파일 가져오기 (경로는 파일 위치에 맞게 조정 가능)
+  fetch("../data/waxup-products.json")
+    .then(response => {
+      if (!response.ok) throw new Error("데이터를 불러오지 못했습니다.");
+      return response.json();
+    })
+    .then(data => {
+      const cardHTML = data.map(item => `
+        <div class="col-md-4 col-sm-6" style="margin-bottom: 30px;">
+          <div style="background: #ffffff; border-radius: 6px; overflow: hidden; box-shadow: 0 4 px 10 px rgba(0, 0, 0, 0.05);">
+            <img src="${item.image}" class="img-responsive" alt="${item.title}" style="width: 100%;">
+            <div style="padding: 15px;">
+              <h4 style="color: #6B8E23; font-weight: 700; margin-top: 0; margin-bottom: 5px;">${item.title}</h4>
+              <p class="text-muted" style="font-size: 13px; margin-bottom: 0;">${item.description}</p>
+            </div>
+          </div>
+        </div>
+      `).join("");
+
+      container.innerHTML = cardHTML;
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      container.innerHTML = `<div class="col-12 text-center"><p>데이터를 로드하는 중 오류가 발생했습니다.</p></div>`;
+    });
+});
