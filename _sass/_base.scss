@@ -182,11 +182,8 @@ header {
     @include background-cover;
     background-position: center;
     
-    /* [수정] 밝은 메인 이미지 위에서도 텍스트가 선명하게 보이도록 은은한 다크 그라데이션 오버레이 추가 */
-    background-image: linear-gradient(
-        rgba(15, 23, 42, 0.45), 
-        rgba(15, 23, 42, 0.35)
-    ), url('../img/header.jpg');
+    /* [수정] 오버레이 레이어를 완전히 제거하고 원래 이미지만 깨끗하게 노출 */
+    background-image: url('../img/header.jpg');
     
     text-align: center;
     color: white;
@@ -203,24 +200,24 @@ header {
                 text-transform: uppercase;
                 margin-top: 0;
                 margin-bottom: 0;
-                /* [수정] 메인 타이틀 입체적인 그림자 추가로 가독성 극대화 */
-                text-shadow: 2px 2px 8px rgba(15, 23, 42, 0.8), 
-                             0px 0px 20px rgba(15, 23, 42, 0.4);
+                /* [수정] 메인 타이틀: 로고의 메인 칼라(#6F9598) 적용 및 은은한 그림자 처리 */
+                color: #6F9598 !important;
+                text-shadow: 1px 1px 2px rgba(235, 243, 242, 0.8);
             }
 
             hr {
                 margin: 30px auto;
+                /* [수정] 구분선: 로고의 민트 블루(#AFD3D2) 포인트 컬러 적용 */
+                border-color: #AFD3D2 !important;
             }
 
             p {
-                /* [수정] 얇은 폰트(300)에서 굵기(500)를 높이고 투명도를 제거하여 가독성 확보 */
-                font-weight: 500; 
-                color: rgba(255, 255, 255, 0.95) !important; 
+                font-weight: 600; /* 글자가 선명하게 보이도록 두께감 강화 */
+                /* [수정] 본문 설명글: 짙은 블루그레이(#6F9598)로 명도 확보 */
+                color: #6F9598 !important; 
                 font-size: 16px;
                 margin-bottom: 50px;
-                /* [수정] 설명글 배경 분리를 위한 다중 텍스트 섀도우 적용 */
-                text-shadow: 1px 1px 6px rgba(15, 23, 42, 0.9), 
-                             1px 1px 3px rgba(15, 23, 42, 0.7);
+                text-shadow: 1px 1px 1px rgba(235, 243, 242, 0.6);
             }
         }
     }
@@ -242,7 +239,7 @@ header {
                 margin-right: auto;
 
                 h1 {
-                    font-size: 55px; /* 데스크톱 화면에서 더 웅장하게 보이도록 크기 확대 */
+                    font-size: 55px;
                 }
 
                 p {
