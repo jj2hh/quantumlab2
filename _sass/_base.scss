@@ -74,20 +74,20 @@ aside {
     border-color: rgba($theme-dark, .5);
     @include sans-serif-font;
     @include transition-all;
+
     .navbar-header .navbar-brand {
         color: $theme-primary;
         @include sans-serif-font;
         font-weight: 700;
         text-transform: uppercase;
-        &:hover,
-        &:focus {
+        &:hover, &:focus {
             color: darken($theme-primary, 10%);
         }
     }
+
     .nav {
         > li {
-            > a,
-            > a:focus {
+            > a, > a:focus {
                 text-transform: uppercase;
                 font-weight: 700;
                 font-size: 13px;
@@ -97,8 +97,7 @@ aside {
                 }
             }
             &.active {
-                > a,
-                > a:focus {
+                > a, > a:focus {
                     color: $theme-primary !important;
                     background-color: transparent;
                     &:hover {
@@ -108,60 +107,71 @@ aside {
             }
         }
     }
+
     @media (min-width: 768px) {
-    /* [기본 상태] about.html을 포함한 모든 곳에서 기본적으로 하얀 배경에 글씨가 보이도록 설정 */
-    background-color: white;
-    border-color: rgba($theme-dark, .1);
+        /* 기본 상태: 기본적으로 하얀 배경에 글씨가 보이도록 설정 */
+        background-color: white;
+        border-color: rgba($theme-dark, .1);
 
-    .navbar-header .navbar-brand {
-      color: $theme-primary; /* 기본 로고 파란색 */
-      &:hover, &:focus {
-        color: darken($theme-primary, 10%);
-      }
-    }
-
-    .nav > li > a, .nav > li > a:focus {
-      color: $theme-dark; /* 기본 메뉴 검은색 */
-      &:hover {
-        color: $theme-primary;
-      }
-    }
-
-    /* [스크롤이 맨 위에 있고, 동시에 메인페이지(.affix-top)일 때만 투명화] */
-    &.affix-top {
-      background-color: transparent;
-      border-color: rgba(white, .3);
-
-      .navbar-header .navbar-brand {
-        color: rgba(white, .8); /* 메인 상단에서는 흰색 로고 */
-        &:hover, &:focus { color: white; }
-      }
-      .nav > li > a, .nav > li > a:focus {
-        color: rgba(white, .8); /* 메인 상단에서는 흰색 메뉴 */
-        &:hover { color: white; }
-      }
-    }
-
-    /* [스크롤 다운 상태 (.affix)] 사용자가 요청한 색상 강제 지정 */
-    &.affix {
-      background-color: white !important;
-      border-color: rgba($theme-dark, .1) !important;
-
-      .navbar-header .navbar-brand {
-        color: #6B8E23 !important; /* 스크롤 다운 시 로고 파란색 */
-        font-size: 14px;
-        &:hover, &:focus {
-          color: darken(#6B8E23, 10%) !important;
+        .navbar-header .navbar-brand {
+            color: $theme-primary;
+            &:hover, &:focus {
+                color: darken($theme-primary, 10%);
+            }
         }
-      }
-      .nav > li > a, .nav > li > a:focus {
-        color: #556B2F !important; /* 스크롤 다운 시 메뉴 검은색 */
-        &:hover {
-          color: #6B8E23 !important; /* 마우스 올리면 파란색 */
+
+        .nav > li > a, .nav > li > a:focus {
+            color: $theme-dark;
+            &:hover {
+                color: $theme-primary;
+            }
         }
-      }
+
+        /* [수정] 스크롤이 맨 위에 있을 때 (메인 상단 투명 상태) */
+        &.affix-top {
+            // 밝은 메인 이미지 위에서 글씨가 보이도록 은은한 어두운 그라데이션 베이스 배경 추가
+            background-color: rgba(15, 23, 42, 0.4) !important; 
+            border-color: rgba(255, 255, 255, 0.1);
+
+            .navbar-header .navbar-brand {
+                color: #ffffff !important; // 완전한 화이트로 시인성 확보
+                text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); // 글자 그림자 추가
+                &:hover, &:focus {
+                    color: rgba(255, 255, 255, 0.8) !important;
+                }
+            }
+
+            .nav > li > a, .nav > li > a:focus {
+                color: #ffffff !important; // 메뉴 글씨 완전 화이트
+                text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); // 글자 그림자 추가
+                &:hover {
+                    color: #38bdf8 !important; // 캐나다 테크 감성의 화사한 스카이블루로 강조
+                }
+            }
+        }
+
+        /* [수정] 스크롤 다운 상태 (.affix) */
+        &.affix {
+            background-color: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.05) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); // 자연스러운 그림자 추가
+
+            .navbar-header .navbar-brand {
+                color: #1e293b !important; // 기존 올리브 그린(#6B8E23) 대신 메인 이미지와 어울리는 딥 차콜/네이비 톤 변경
+                font-size: 14px;
+                &:hover, &:focus {
+                    color: #3b82f6 !important;
+                }
+            }
+
+            .nav > li > a, .nav > li > a:focus {
+                color: #334155 !important; // 가독성이 좋은 슬레이트 그레이 컬러
+                &:hover {
+                    color: #3b82f6 !important; // 마우스 올렸을 때 신뢰감을 주는 블루 톤
+                }
+            }
+        }
     }
-  }
 }
 
 // Homepage Header
