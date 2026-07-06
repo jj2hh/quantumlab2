@@ -182,8 +182,9 @@ header {
     @include background-cover;
     background-position: center;
     
-    /* [수정] 오버레이 레이어를 완전히 제거하고 원래 이미지만 깨끗하게 노출 */
-    background-image: url('../img/header.jpg');
+    /* [수정] 배경색(#333 등)의 간섭을 완전히 차단하고, 순수 오리지널 이미지만 선명하게 노출 */
+    background-color: transparent !important;
+    background-image: url('../img/header.jpg') !important;
     
     text-align: center;
     color: white;
@@ -200,24 +201,28 @@ header {
                 text-transform: uppercase;
                 margin-top: 0;
                 margin-bottom: 0;
-                /* [수정] 메인 타이틀: 로고의 메인 칼라(#6F9598) 적용 및 은은한 그림자 처리 */
+                /* 메인 타이틀: 로고의 블루그레이(#6F9598) 적용 */
                 color: #6F9598 !important;
-                text-shadow: 1px 1px 2px rgba(235, 243, 242, 0.8);
+                /* 밝은 기공물 배경 위에서 글자가 묻히지 않도록 로고의 아이스 화이트(#EBF3F2)를 테두리처럼 은은하게 배치 */
+                text-shadow: 1px 1px 3px rgba(235, 243, 242, 0.9), 
+                             -1px -1px 3px rgba(235, 243, 242, 0.9);
             }
 
             hr {
                 margin: 30px auto;
-                /* [수정] 구분선: 로고의 민트 블루(#AFD3D2) 포인트 컬러 적용 */
+                /* 구분선: 로고의 민트 블루(#AFD3D2) 포인트 컬러 적용 */
                 border-color: #AFD3D2 !important;
             }
 
             p {
-                font-weight: 600; /* 글자가 선명하게 보이도록 두께감 강화 */
-                /* [수정] 본문 설명글: 짙은 블루그레이(#6F9598)로 명도 확보 */
+                font-weight: 700; /* 흰색 기공물 입체감 위에서도 흐려지지 않게 굵기 강화 */
+                /* 본문 설명글: 로고의 블루그레이(#6F9598) 적용 */
                 color: #6F9598 !important; 
                 font-size: 16px;
                 margin-bottom: 50px;
-                text-shadow: 1px 1px 1px rgba(235, 243, 242, 0.6);
+                /* 아이스 화이트(#EBF3F2) 섀도우로 글자 경계를 명확하게 보호 */
+                text-shadow: 1px 1px 2px rgba(235, 243, 242, 0.9),
+                             -1px -1px 2px rgba(235, 243, 242, 0.9);
             }
         }
     }
