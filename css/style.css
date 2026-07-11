@@ -1,0 +1,24 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #fdfdfe; font-family: 'IBM Plex Sans', sans-serif; }
+a { color: #16223f; text-decoration: none; }
+a:hover { color: #2a3e6b; }
+::selection { background: rgba(22, 34, 63, 0.18); }
+
+.nav-dropdown { position: relative; }
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 14px;
+  background: #fdfdfe;
+  border: 1px solid rgba(22, 34, 63, 0.16);
+  min-width: 200px;
+  padding: 8px;
+  z-index: 60;
+}
+.nav-dropdown:hover .nav-dropdown-menu { display: block; }
+.nav-dropdown-menu a { display: block; padding: 10px 14px; font-size: 14px; font-weight: 500; }
+
+#contact-form button[disabled] { opacity: 0.6; cursor: default; }
